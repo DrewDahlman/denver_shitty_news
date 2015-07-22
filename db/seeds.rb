@@ -9,6 +9,66 @@
 #--------------------------------------------------------------
 categories = [
 	{
+		:title => "Local News",
+		:slug => "local_news",
+		:urls => [
+			"http://rssfeeds.9news.com/kusa-local",
+			"http://rssfeeds.9news.com/kusa-business",
+			"http://rssfeeds.9news.com/kusa-consumer",
+			"http://rssfeeds.9news.com/kusa-health",
+			"http://rssfeeds.9news.com/kusa-investigative",
+			"http://rssfeeds.9news.com/kusa-crime",
+			"http://rssfeeds.9news.com/kusa-entertainment",
+			"http://www.thedenverchannel.com/feeds/rssFeed?obfType=RSS_FEED&siteId=100003&categoryId=10001",
+			"http://www.thedenverchannel.com/feeds/rssFeed?obfType=RSS_FEED&siteId=100003&categoryId=20000",
+			"http://www.thedenverchannel.com/feeds/rssFeed?obfType=RSS_FEED&siteId=100003&categoryId=20001",
+			"http://denver.cbslocal.com/feed/",
+			"http://feeds.denverpost.com/dp-news-breaking",
+			"http://feeds.denverpost.com/dp-news-topstories",
+			"http://feeds.denverpost.com/dp-news-education",
+			"http://feeds.denverpost.com/dp-news-environment",
+			"http://feeds.denverpost.com/dp-news-breaking-local",
+			"http://feeds.denverpost.com/dp-news-marijuana",
+			"http://feeds.denverpost.com/dp-weather",
+			"http://feeds.denverpost.com/dp-business-real-estate",
+			"http://feeds.denverpost.com/dp-news-local-denver"
+		]
+	},
+	{
+		:title => "Local Sports",
+		:slug => "local-sports",
+		:urls => [
+			"http://rssfeeds.9news.com/kusa-sports",
+			"http://rssfeeds.9news.com/kusa-broncos",
+			"http://rssfeeds.9news.com/kusa-rockies",
+			"http://rssfeeds.9news.com/kusa-nuggets",
+			"http://rssfeeds.9news.com/kusa-avalanche",
+			"http://www.thedenverchannel.com/feeds/rssFeed?obfType=RSS_FEED&siteId=100003&categoryId=10004",
+			"http://www.thedenverchannel.com/feeds/rssFeed?obfType=RSS_FEED&siteId=100003&categoryId=200103",
+			"http://www.thedenverchannel.com/feeds/rssFeed?obfType=RSS_FEED&siteId=100003&categoryId=200104",
+			"http://www.thedenverchannel.com/feeds/rssFeed?obfType=RSS_FEED&siteId=100003&categoryId=200120",
+			"http://www.thedenverchannel.com/feeds/rssFeed?obfType=RSS_FEED&siteId=100003&categoryId=200116",
+			"http://denver.cbslocal.com/feed/"
+		]
+	},
+	{
+		:title => "Business",
+		:slug => "business",
+		:urls => [
+			"http://rssfeeds.9news.com/kusa-business",
+			"http://rssfeeds.9news.com/kusa-consumer",
+			"http://www.thedenverchannel.com/feeds/rssFeed?obfType=RSS_FEED&siteId=100003&categoryId=200096",
+			"http://www.thedenverchannel.com/feeds/rssFeed?obfType=RSS_FEED&siteId=100003&categoryId=20069",
+			"http://www.thedenverchannel.com/feeds/rssFeed?obfType=RSS_FEED&siteId=100003&categoryId=20074",
+			"http://denver.cbslocal.com/feed/",
+			"http://feeds.denverpost.com/dp-news-breaking",
+			"http://feeds.denverpost.com/dp-news-topstories",
+			"http://feeds.denverpost.com/dp-business",
+			"http://feeds.denverpost.com/dp-business-food-retail",
+			"http://feeds.denverpost.com/dp-business-real-estate"
+		]
+	},
+	{
 		:title => "World News",
 		:slug => "world_news",
 		:urls => [
@@ -48,49 +108,6 @@ categories = [
 		]
 	},
 	{
-		:title => "Local News",
-		:slug => "local_news",
-		:urls => [
-			"http://rssfeeds.9news.com/kusa-local",
-			"http://rssfeeds.9news.com/kusa-business",
-			"http://rssfeeds.9news.com/kusa-consumer",
-			"http://rssfeeds.9news.com/kusa-health",
-			"http://rssfeeds.9news.com/kusa-investigative",
-			"http://rssfeeds.9news.com/kusa-crime",
-			"http://rssfeeds.9news.com/kusa-entertainment",
-			"http://www.thedenverchannel.com/feeds/rssFeed?obfType=RSS_FEED&siteId=100003&categoryId=10001",
-			"http://www.thedenverchannel.com/feeds/rssFeed?obfType=RSS_FEED&siteId=100003&categoryId=20000",
-			"http://www.thedenverchannel.com/feeds/rssFeed?obfType=RSS_FEED&siteId=100003&categoryId=20001",
-			"http://denver.cbslocal.com/feed/",
-			"http://feeds.denverpost.com/dp-news-breaking",
-			"http://feeds.denverpost.com/dp-news-topstories",
-			"http://feeds.denverpost.com/dp-news-education",
-			"http://feeds.denverpost.com/dp-news-environment",
-			"http://feeds.denverpost.com/dp-news-breaking-local",
-			"http://feeds.denverpost.com/dp-news-marijuana",
-			"http://feeds.denverpost.com/dp-weather",
-			"http://feeds.denverpost.com/dp-business-real-estate",
-			"http://feeds.denverpost.com/dp-news-local-denver"
-		]
-	},
-	{
-		:title => "Business",
-		:slug => "business",
-		:urls => [
-			"http://rssfeeds.9news.com/kusa-business",
-			"http://rssfeeds.9news.com/kusa-consumer",
-			"http://www.thedenverchannel.com/feeds/rssFeed?obfType=RSS_FEED&siteId=100003&categoryId=200096",
-			"http://www.thedenverchannel.com/feeds/rssFeed?obfType=RSS_FEED&siteId=100003&categoryId=20069",
-			"http://www.thedenverchannel.com/feeds/rssFeed?obfType=RSS_FEED&siteId=100003&categoryId=20074",
-			"http://denver.cbslocal.com/feed/",
-			"http://feeds.denverpost.com/dp-news-breaking",
-			"http://feeds.denverpost.com/dp-news-topstories",
-			"http://feeds.denverpost.com/dp-business",
-			"http://feeds.denverpost.com/dp-business-food-retail",
-			"http://feeds.denverpost.com/dp-business-real-estate"
-		]
-	},
-	{
 		:title => "Science",
 		:slug => "science",
 		:urls => [
@@ -107,23 +124,6 @@ categories = [
 			'http://feeds.feedburner.com/TheOnion/',
 			'http://feeds.feedburner.com/BBCScience/',
 			'https://www.reddit.com/r/nottheonion/.rss'
-		]
-	},
-	{
-		:title => "Sports",
-		:slug => "sports",
-		:urls => [
-			"http://rssfeeds.9news.com/kusa-sports",
-			"http://rssfeeds.9news.com/kusa-broncos",
-			"http://rssfeeds.9news.com/kusa-rockies",
-			"http://rssfeeds.9news.com/kusa-nuggets",
-			"http://rssfeeds.9news.com/kusa-avalanche",
-			"http://www.thedenverchannel.com/feeds/rssFeed?obfType=RSS_FEED&siteId=100003&categoryId=10004",
-			"http://www.thedenverchannel.com/feeds/rssFeed?obfType=RSS_FEED&siteId=100003&categoryId=200103",
-			"http://www.thedenverchannel.com/feeds/rssFeed?obfType=RSS_FEED&siteId=100003&categoryId=200104",
-			"http://www.thedenverchannel.com/feeds/rssFeed?obfType=RSS_FEED&siteId=100003&categoryId=200120",
-			"http://www.thedenverchannel.com/feeds/rssFeed?obfType=RSS_FEED&siteId=100003&categoryId=200116",
-			"http://denver.cbslocal.com/feed/"
 		]
 	}
 ]
