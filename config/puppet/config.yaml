@@ -12,12 +12,12 @@ vagrantfile-local:
     vm:
         box: "precise32"
         box_url: "http://files.vagrantup.com/precise32.box"
-        hostname: 'denver.shitty.dev'
+        hostname: 'shitty.dev'
         memory: '512'
         cpus: '1'
         chosen_provider: virtualbox
         network:
-            private_network: 192.168.56.103
+            private_network: 192.168.56.102
             forwarded_port:
                 ports:
                     host: '80'
