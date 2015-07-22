@@ -1,0 +1,68 @@
+<div class='content'>
+	<section id='headlines'>
+		<div class='category'>
+			<h2>Popular</h2>
+			<% @trending.each do | article | %>
+				<%= render :partial => "shared/post", locals: ({article: article}) %>
+			<% end %>
+		</div>
+		<h1>Top Shitty Headlines, <%= @today.strftime("%B #{@today.day.ordinalize}, %Y") %></h1>
+		<% @categories.each do | cat | %>
+			<div class='category'>
+				<h2><%= cat.title %></h2>
+				<% cat.articles.where('created_at < ?', @today).order('id DESC').limit(5).each do | article | %>
+					<%= render :partial => "shared/post", locals: ({article: article}) %>
+				<% end %>
+			</div>
+		<% end %>
+	</section>
+
+	<section id='top-story'>
+		<h1>Super Shitty News</h1>
+		<div class='top-story-photo' style='background-image: url(<%= @topHeadline[0].photo.url %>)'>
+			<div class='top-story-headline'><a href='/featured/<%= @topHeadline[0].hash_url %>'><%= strip_tags(@topHeadline[0].title) %></a></div>
+		</div>
+		<div id='others'>
+			<h1>Other headlines:</h1>
+			<% $i = 0 %>
+			<% @categories.each do | cat | %>
+				<div class='cat'>
+				<h1><%= cat.title %></h1>
+				<% cat.articles.where('created_at < ?', @today).order('id DESC').offset(5).limit(5).each do | article | %>
+					<div class='other-news'>
+						<h2><a href='/<%= cat.slug %>/<%= article.hash_url %>'><%= strip_tags(article.title) %></a></h2>
+					</div>
+				<% end %>
+				</div>
+				<% if $i == 2 %>
+					<% if @topHeadline[1] %>
+					<div class='top-story-photo' style='background-image: url(<%= @topHeadline[1].photo.url %>)'>
+						<div class='top-story-headline'><a href='/featured/<%= @topHeadline[1].hash_url %>'><%= strip_tags(@topHeadline[1].title) %></a></div>
+					</div>
+					<% end %>
+				<% end %>
+				<% if $i == 5 %>
+					<% if @topHeadline[2] %>
+					<div class='top-story-photo' style='background-image: url(<%= @topHeadline[2].photo.url %>)'>
+						<div class='top-story-headline'><a href='/featured/<%= @topHeadline[2].hash_url %>'><%= strip_tags(@topHeadline[2].title) %></a></div>
+					</div>
+					<% end %>
+				<% end %>
+				<% $i += 1 %>
+			<% end %>
+		</div>
+		<div id='about'>
+			<h1>About SNN</h1>
+			<div>
+			What happens if a robot writes the news? Headlines these days are so over the top and ridiculous at times that I thought it would be interesting to see what happens when you feed a robot all of these sources and let it write the headlines.
+			<br/><br/>
+			Sometimes the headlines are hilarious, sometimes sad, sometimes they make no sense at all. You will notice how the news cycle works in 24 hours periods, stories will sometimes repeate, this is because the selected news sources are posting the same stories over and over again for clicks and attention.
+			<br/><br/>
+			Shitty.news is a shitty robot that scrapes RSS feeds of news organizations around the world and creates <a href='https://en.wikipedia.org/wiki/Markov_chain' target='_blank'>Markov Chains</a> out of the headlines by category. They are completely random parings of headlines. Every 2 hours the bot scrapes for new stories for the day and creates a random new set of headlines.<br/><br/>
+			Created by: <a href='https://twitter.com/meusPartum' target='_blank'>Drew Dahlman</a><br/>
+			Source Code: <a href='https://github.com/DrewDahlman/shitty_news' target='_blank'>Github</a>
+			</div>
+		</div>
+	</section>
+	<div class='clearfix'></div>
+</div>

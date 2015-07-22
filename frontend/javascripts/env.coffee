@@ -1,0 +1,1 @@
+window.SN = window.SN || {}

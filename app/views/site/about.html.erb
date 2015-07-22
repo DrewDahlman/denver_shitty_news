@@ -1,0 +1,35 @@
+<div class='content'>
+	<section id='headlines'>
+		<div class='category'>
+			<h2>Popular</h2>
+			<% @trending.each do | article | %>
+				<%= render :partial => "shared/post", locals: ({article: article}) %>
+			<% end %>
+		</div>
+		<h1>Top Shitty Headlines, <%= @today.strftime("%B #{@today.day.ordinalize}, %Y") %></h1>
+		<% @categories.each do | cat | %>
+			<div class='category'>
+				<h2><%= cat.title %></h2>
+				<% cat.articles.where('created_at < ?', @today).order('id DESC').limit(5).each do | article | %>
+					<%= render :partial => "shared/post", locals: ({article: article}) %>
+				<% end %>
+			</div>
+		<% end %>
+	</section>
+
+	<section id='top-story'>
+		<div id='about'>
+			<h1>About SNN</h1>
+			<div>
+			What happens if a robot writes the news? Headlines these days are so over the top and ridiculous at times that I thought it would be interesting to see what happens when you feed a robot all of these sources and let it write the headlines.
+			<br/><br/>
+			Sometimes the headlines are hilarious, sometimes sad, sometimes they make no sense at all. You will notice how the news cycle works in 24 hours periods, stories will sometimes repeate, this is because the selected news sources are posting the same stories over and over again for clicks and attention.
+			<br/><br/>
+			Shitty.news is a shitty robot that scrapes RSS feeds of news organizations around the world and creates <a href='https://en.wikipedia.org/wiki/Markov_chain' target='_blank'>Markov Chains</a> out of the headlines by category. They are completely random parings of headlines. Every 2 hours the bot scrapes for new stories for the day and creates a random new set of headlines.<br/><br/>
+			Created by: <a href='https://twitter.com/meusPartum' target='_blank'>Drew Dahlman</a><br/>
+			Source Code: <a href='https://github.com/DrewDahlman/shitty_news' target='_blank'>Github</a>
+			</div>
+		</div>
+	</section>
+	<div class='clearfix'></div>
+</div>
