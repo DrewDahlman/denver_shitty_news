@@ -102,12 +102,12 @@ class unicorn {
     ensure => "directory"
   }
 
-  file { "unicorn_config": 
+  file { "denver_unicorn_config": 
     path => "/etc/unicorn/$application_name.rb",
     content => template("unicorn_conf.rb.erb")
   }
 
-  file{"/etc/init.d/unicorn":
+  file{"/etc/init.d/denver_unicorn":
     content => template("unicorn_init.erb"),
     mode => "g=rwx,o=rx"
   }
